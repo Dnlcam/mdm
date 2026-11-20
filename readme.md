@@ -45,3 +45,8 @@ class Menino:
 menino = Menino("Lucas", "gentilmente")
 menino.apresentar()
 ```
+
+## Programas separados
+
+- [Programa Java](java/Menino.java)
+- [Programa Python](python/menino.py)
