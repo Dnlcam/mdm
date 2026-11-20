@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "meninomod",
+  "version": "${version}",
+  "name": "Menino Mod",
+  "description": "Um mod simples com um item e um comando.",
+  "authors": [
+    "Aluno"
+  ],
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.meninomod.MeninoMod"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "fabric-api": "*",
+    "minecraft": "~1.21.4",
+    "java": ">=21"
+  }
+}
