@@ -63,28 +63,68 @@ O mod adiciona:
 ## Requisitos
 
 - Java 21
+- Gradle (necessário para gerar o wrapper; o projeto ainda não inclui `gradlew.bat`)
 - Minecraft 1.21.4 com Fabric Loader
 - Fabric API 1.21.4
 
-## Como compilar
+## Como compilar no Windows
 
-1. Instale o JDK 21 e adicione-o ao `PATH`.
-2. Abra um terminal na raiz do projeto.
-3. No Windows, execute:
+1. Instale o JDK 21 e o Gradle. Se o instalador do Java oferecer essa opção,
+   adicione o JDK ao `PATH`.
+2. Abra o PowerShell e confirme que os comandos estão disponíveis:
+
+```powershell
+java -version
+javac -version
+gradle -version
+```
+
+3. Entre na pasta do projeto:
+
+```powershell
+cd "C:\Users\Meu computador\Repositorios\mods\mdm\minecraft-mod"
+```
+
+4. Gere o wrapper do Gradle. Isso cria `gradlew.bat` para compilar o projeto
+   usando uma versão definida do Gradle:
+
+```powershell
+gradle wrapper --gradle-version 8.11
+```
+
+5. Compile o mod:
 
 ```powershell
 .\gradlew.bat build
 ```
 
-O arquivo `.jar` será criado em `minecraft-mod\build\libs`.
+Na primeira compilação, o Gradle pode demorar enquanto baixa as dependências.
+Quando terminar, o arquivo `.jar` do mod estará em
+`minecraft-mod\build\libs`.
 
-## Como usar
+## Como instalar e usar no Minecraft
 
-1. Instale Fabric Loader para Minecraft 1.21.4.
-2. Instale a versão correspondente da Fabric API na pasta `mods`.
-3. Copie o `.jar` do mod para a pasta `mods`.
-4. Inicie o jogo e use `/oi`.
-5. Procure o item **Amuleto do Menino** no inventário criativo.
+1. Instale o Fabric Loader para Minecraft 1.21.4.
+2. Abra o launcher uma vez com o perfil Fabric e depois feche o jogo.
+3. Baixe a Fabric API compatível com Minecraft 1.21.4.
+4. Abra a pasta `.minecraft`: pressione `Win + R`, digite
+   `%appdata%\.minecraft` e pressione Enter.
+5. Abra ou crie a pasta `mods` dentro de `.minecraft`.
+6. Copie para `mods` o arquivo da Fabric API e o `.jar` do mod gerado em
+   `minecraft-mod\build\libs`.
+7. No launcher, inicie o perfil Fabric para Minecraft 1.21.4.
+8. Em um mundo, digite `/oi` no chat para testar o comando. Se comandos
+   estiverem desativados no mundo, habilite-os ou abra o mundo para LAN com
+   comandos permitidos.
+9. No modo Criativo, procure **Amuleto do Menino** na aba **Ferramentas**.
+
+Os exemplos em `java/` e `python/` são programas independentes e não são mods;
+não os copie para a pasta `mods`. O mod do Minecraft é o projeto dentro de
+`minecraft-mod/`.
+
+**Aparência do item:** o mod registra o item, mas ainda não inclui um modelo nem
+uma textura personalizados. Por isso, a imagem do item pode aparecer como uma
+textura ausente no jogo.
 
 ## Explicação para iniciantes
 
