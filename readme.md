@@ -7,6 +7,8 @@ Quando ele fala, transmite alegria. Quando brinca, espalha imaginação e
 descobertas. E, com sua bondade, consegue deixar o dia de todas as pessoas
 ao seu redor um pouco mais feliz.
 
+test
+
 ## Exemplo em Java
 
 ```java
